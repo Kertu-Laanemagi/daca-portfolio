@@ -1,9 +1,9 @@
 # daca-portfolio
 DACA programmi andmeanalüütiku portfoolio
-# DACA Portfoolio -- [Kertu Läänemägi]
+# DACA Portfoolio -- Kertu Läänemägi
 
 ## Minust
-Olen pikaajalise finants- ja raamatupidamisalase kogemusega spetsialist, kes otsustas uurida andmeteaduse maailma. Liitusin DACA programmiga, et õppida numbreid veelgi paremini "rääkima"panema ja selgete visuaalsete mudelitena esitama. Minu eesmärk on andmete toel teha targemaid ja kvaliteetseid otsuseid.
+Olen pikaajalise finants- ja raamatupidamisalase kogemusega spetsialist, kes otsustas uurida andmeteaduse maailma. Liitusin DACA programmiga, et õppida numbreid veelgi paremini "rääkima" panema ja selgete visuaalsete mudelitena esitama. Minu eesmärk on andmete toel teha targemaid ja kvaliteetseid otsuseid.
 
 ## Eesmärk
 Õppida andmeanalüüsi -- SQL, Python, visualiseerimine -- ja ehitada professionaalne portfoolio.
