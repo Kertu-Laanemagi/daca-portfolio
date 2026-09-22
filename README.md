@@ -1,22 +1,68 @@
-# daca-portfolio
-DACA programmi andmeanalüütiku portfoolio
-# DACA Portfoolio -- Kertu Läänemägi
+\# DACA Portfoolio
 
-## Minust
-Olen pikaajalise finants- ja raamatupidamisalase kogemusega spetsialist, kes otsustas uurida andmeteaduse maailma. Liitusin DACA programmiga, et õppida numbreid veelgi paremini "rääkima" panema ja selgete visuaalsete mudelitena esitama. Minu eesmärk on andmete toel teha targemaid ja kvaliteetseid otsuseid.
+&#x20;
 
-## Eesmärk
-Õppida andmeanalüüsi -- SQL, Python, visualiseerimine -- ja ehitada professionaalne portfoolio.
+\*\*Programm:\*\* Data Analyst Career Accelerator (DACA)
 
-## Nädala kaupa
-| Nädal | Teema | Staatus |
-|-------|-------|---------|
-| 0 | Onboarding | Käimas |
-| 1 | SQL Basics | Tulemas |
-| 2 | SQL Cleaning | Tulemas |
-| 3 | SQL JOINs | Tulemas |
-| 4 | SQL Aggregation | Tulemas |
-| 5-6 | Visualiseerimine | Tulemas |
-| 7-8 | Python | Tulemas |
-| 9-10 | Portfoolio + Karjäär | Tulemas |
+\*\*Osaleja:\*\* Kertu Läänemägi
+
+\*\*Algus:\*\* 22.09.2026
+
+&#x20;
+
+\## Kirjeldus
+
+&#x20;
+
+See repositoorium sisaldab minu DACA õppeprojekte ja portfoolio.
+
+&#x20;
+
+\## Projektid
+
+&#x20;
+
+\### Week 0: Onboarding
+
+\- GitHub seadistamine ✅
+
+\- Supabase seadistamine ✅
+
+&#x20;
+
+\### Week 1: SQL Põhitõed
+
+\- (tulemas...)
+
+&#x20;
+
+\### Week 2: SQL Andmete Puhastamine
+
+\- (tulemas...)
+
+&#x20;
+
+\## Oskused
+
+&#x20;
+
+\- \*\*SQL:\*\* PostgreSQL, Supabase
+
+\- \*\*Python:\*\* pandas, plotly (tulemas...)
+
+\- \*\*Visualiseerimine:\*\* Power BI / Streamlit (tulemas...)
+
+\- \*\*Tööriistad:\*\* Git, GitHub, VS Code
+
+&#x20;
+
+\## Kontaktc
+
+&#x20;
+
+\- \*\*GitHub:\*\* \[github.com/sinu-username](https://github.com/Kertu-Laanemagi)
+
+\- \*\*Email:\*\* kertu.klandorf@gmail.com
+
+
 
