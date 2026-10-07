@@ -1,0 +1,63 @@
+-- Loon test tabeli selleks, et teha muudatusi
+CREATE TABLE products_test AS SELECT * FROM products;
+SELECT COUNT(*) AS ridade_arv FROM products_test;
+
+-- Leian duplikaadid
+SELECT product_name, COUNT(*) AS koopiate_arv
+FROM products_test
+GROUP BY product_name
+HAVING COUNT(*) > 1
+ORDER BY koopiate_arv DESC;
+-- Leidub 12 duplikaati kui teostada päring product_name järgi
+
+--Leia Null read kriitilistes veergudes
+SELECT
+    COUNT(*) FILTER (WHERE product_name IS NULL OR product_name = '') AS null_nimi,
+    COUNT(*) FILTER (WHERE category IS NULL OR category = '') AS null_kategooria,
+    COUNT(*) FILTER (WHERE retail_price IS NULL) AS null_jaehind,
+    COUNT(*) FILTER (WHERE cost_price IS NULL) AS null_omahind
+FROM products_test;
+--Kriitilisi =väärtusi Product tabelis ei leidu
+
+-- Kas on negatiivseid hindu?
+SELECT COUNT(*) AS negatiivne_hind
+FROM products_test
+WHERE retail_price < 0;
+-- Negatiivseid retail_price ei leidu
+
+-- Kas on äärmuslikke hindu (> 1000€)?
+SELECT product_name, retail_price
+FROM products_test
+WHERE retail_price > 1000
+ORDER BY retail_price DESC;
+-- Äärmuslikud (>1000) ei leidu
+
+-- Kategooriate järjekindluse kontrollimine
+SELECT category, COUNT(*) AS arv
+FROM products_test
+GROUP BY category
+ORDER BY category;
+
+-- Ühtlusta kategooriate nimed
+UPDATE products_test
+SET category = INITCAP(TRIM(category))
+WHERE category != INITCAP(TRIM(category));
+
+-- Kontrolli tulemust
+SELECT category, COUNT(*) AS arv
+FROM products_test
+GROUP BY category ORDER BY category;
+
+-- Standardiseerimiseks
+UPDATE products_test
+SET category = CASE
+    WHEN LOWER(TRIM(category)) IN ('meeste_riided') THEN 'Menswear'
+    WHEN LOWER(TRIM(category)) IN ('naiste_riided') THEN 'Womenswear'
+    WHEN LOWER(TRIM(category)) IN ('laste_riided') THEN 'Kidswear'
+    WHEN LOWER(TRIM(category)) IN ('jalanõusid') THEN 'Footwear'
+    WHEN LOWER(TRIM(category)) IN ('aksessuaarid') THEN 'Accessories'
+    ELSE INITCAP(TRIM(category))
+END;
+
+
+
