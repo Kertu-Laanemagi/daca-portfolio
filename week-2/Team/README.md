@@ -23,7 +23,7 @@ Kontrollisin puuduvaid tooteandmeid, korduvaid toote nimetusi ning kriitiliste v
 
 Töötasin `products_test` tabeliga, et algne `products` tabel jääks muutmata.
 
-Individuaalse töö SQL-päringud, aruanne ja ekraanipildid asuvad kaustas [individual](individual/).
+Individuaalse töö SQL-päringud, aruanne ja ekraanipildid asuvad lingil [week-2/Team/Week2_cleaning_products.sgl]
 
 ## Meeskonnatöö
 
