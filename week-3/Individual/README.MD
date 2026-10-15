@@ -33,7 +33,7 @@ Harjutasin nii iseseisvas töös kui grupitöös koostama erinevaid JOIN päring
 
 ## SQL-failid
 
-[Individuaalne SQL päring](https://github.com/Kertu-Laanemagi/daca-portfolio/blob/main/week-3/Individual/week3_JOIN.sql)
+[Individuaalne SQL päring](https://github.com/Kertu-Laanemagi/daca-portfolio/blob/main/week-3/Individual/week3_JOIN.sql),
 [Grupitöö kaust](https://github.com/Kertu-Laanemagi/daca-portfolio/tree/main/week-3/Team)
 
 ## Kokkuvõte
