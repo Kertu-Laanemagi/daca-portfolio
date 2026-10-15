@@ -9,10 +9,11 @@ Meeskonna nimi: Toode
 - **ORDER BY ja LIMIT:** olulisemate tulemuste järjestamine.
   
 ## Liikmed ja tööjaotus
-Liige -	Vastutus
-Kertu Läänemägi	sales – müügiandmed
-Ivo Murel	customers – kliendiandmed
-Helen Starodubtseva	products ja inventory – tooted ja inventuur
+|Liige | Vastutus |
+|---|---|
+|Kertu Läänemägi|	sales – müügiandmed|
+|Ivo Murel |	customers – kliendiandmed |
+|Helen Starodubtseva	| products ja inventory – tooted ja inventuur |
 
 ## Töö eesmärk
 UrbanStyle'i andmebaasi tabelite ühendamine SQL JOIN-päringutega, et analüüsimaks klientide ostukäitumist. 
