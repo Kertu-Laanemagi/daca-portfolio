@@ -1,0 +1,150 @@
+
+-- WEEK 3 GRUPITÖÖ – KERTU
+-- Roll A: Müügi- ja Kliendiandmete ühendamine
+
+==================================================================================
+INNER JOIN
+==================================================================================
+
+-- Lihtne INNER JOIN: kliendid, kes on ostnud
+SELECT
+    c.first_name,
+    c.last_name,
+    c.email,
+    c.city,
+    s.sale_id,
+    s.sale_date,
+    s.total_price
+FROM sales s
+INNER JOIN customers c ON s.customer_id = c.customer_id
+LIMIT 20;
+-- Käsk ühendab sale ning customer tabelid, kuvab küsitud read.
+-- Kui käivitada käsklus ilma limit piirianguta, on andmebaasis 9130 kliendirida, kes on sooritanud ostu.
+-- 
+
+-- Leia TOP 10 klienti kogumüügi järgi?
+SELECT
+    c.first_name || ' ' || c.last_name AS klient,
+    c.city,
+    COUNT(DISTINCT s.sale_id) AS ostude_arv,
+    TO_CHAR(SUM(s.total_price), 'FM999 999 999 990.00') AS kogumüük
+FROM sales s
+INNER JOIN customers c ON s.customer_id = c.customer_id
+GROUP BY c.customer_id, c.first_name, c.last_name, c.city
+ORDER BY SUM(s.total_price) DESC
+LIMIT 10;
+-- Vastus: Suurima kogumüügiga TOP 10 kliendid on järgmised. 
+| klient       | city     | ostude_arv | kogumüük    |
+| ------------ | -------- | ---------- | ----------- |
+| Tiina Pärn   | Tartu    | 73         |   27 668.02 |
+| Priit Rand   | Pärnu    | 76         |   26 286.10 |
+| Kevin Org    | Tallinn  | 78         |   23 467.13 |
+| Laura Tammik | Pärnu    | 74         |   23 385.82 |
+| Erkki Ilves  | Tartu    | 72         |   22 942.42 |
+| Anu Kuusik   | Tallinn  | 77         |   21 626.10 |
+| Kersti Lill  | Tallinn  | 71         |   21 137.47 |
+| Riina Lill   | Pärnu    | 67         |   20 972.33 |
+| Annika Saar  | Viljandi | 66         |   20 726.79 |
+| Ago Kull     | Pärnu    | 64         |   20 124.61 |
+
+-- Müük linnade kaupa
+SELECT
+    c.city AS linn,
+    COUNT(DISTINCT c.customer_id) AS kliente,
+    COUNT(s.sale_id) AS oste,
+    SUM(s.total_price) AS kogumüük
+FROM sales s
+INNER JOIN customers c ON s.customer_id = c.customer_id
+GROUP BY c.city
+ORDER BY kogumüük DESC;
+
+SELECT
+    c.city AS linn,
+    COUNT(DISTINCT c.customer_id) AS kliente,
+    COUNT(s.sale_id) AS oste,
+    TO_CHAR(SUM(s.total_price), 'FM999 999 999 990.00') AS kogumüük
+FROM sales s
+INNER JOIN customers c ON s.customer_id = c.customer_id
+GROUP BY c.city
+ORDER BY SUM(s.total_price) DESC;
+-- Suurima müügiga linnade edetabel? Suurima kogumüügiga oli Tallinn 1 006 252,88 €, Tartu 523 286,64 € ja Pärnu 347 005,86 €
+
+-- Müük lojaalsustasemete kaupa - lisatud TO CHAR ( , 'FM999 999 999 990.00')
+SELECT
+    c.loyalty_tier,
+    COUNT(DISTINCT c.customer_id) AS kliente,
+    TO_CHAR(SUM(s.total_price), 'FM999 999 999 990.00') AS kogumüük
+FROM sales s
+INNER JOIN customers c ON s.customer_id = c.customer_id
+GROUP BY c.loyalty_tier
+ORDER BY SUM(s.total_price) DESC;
+-- 1024 kliendil on lojaalsustase puudu ja nende klientide kogumüük on 1 071 805,32 €.
+-- Hõbetase on 560 kliendil, kes on teinud 593 470.07 € eest oste.
+-- Kuldtase on 491 kliendil, kes on teinud kokku oste 533 601, 64 € eest.
+-- Pronkstaseme kliente on 476 ja nende koguostude summa on 423 854,75 €.
+
+
+-- Leia kliendid, kelle kogumüük on üle keskmise:
+SELECT
+    c.first_name || ' ' || c.last_name AS klient,
+    TO_CHAR(SUM(s.total_price), 'FM999 999 999 990.00') AS kogumüük
+FROM sales s
+INNER JOIN customers c ON s.customer_id = c.customer_id
+GROUP BY c.customer_id, c.first_name, c.last_name
+HAVING SUM(s.total_price) > (
+    SELECT AVG(kliendi_müük)
+    FROM (
+        SELECT SUM(total_price) AS kliendi_müük
+        FROM sales
+        GROUP BY customer_id
+    ) AS keskmised
+)
+ORDER BY kogumüük DESC;
+
+--Leia keskmine kliendi ostusumma? 
+ SELECT AVG(kliendi_müük)
+    FROM (
+        SELECT SUM(total_price) AS kliendi_müük
+        FROM sales
+        GROUP BY customer_id
+    ) AS keskmised
+-- Keskmine müük: 1 139,96 €
+-- Kliente  üle keskmise müügiga: Üle keskmise müügiga kliente on kokku 762
+-- Kui suur protsent kõikidest klientidest moodustavad keskmisest rohkem kulutajad?  762/2551= 29,87 %
+
+-- city_summary arvutab esmalt põhiandmed iga linna kohta eraldi (hoides müügisummad numbrilisena, et neid saaks hiljem liita)
+-- ranked_cities jagab linnad nimeliselt poega piirkondadeks ja määrab kõigele muule nimeks "Muud piirkonnad". Samuti lisatakse abiväli sorteerimise_järjekord, et koondrida ei trügiks tabeli algusesse.
+-- Põhipäring summeerib tulemused uute gruppide lõikes kokku, vormindab lõpliku müügisumma tekstiks (TO_CHAR) ja paneb tabeli paika õiges järjekorras.
+WITH city_summary AS (
+    SELECT
+        c.city AS linn,
+        COUNT(DISTINCT c.customer_id) AS kliente,
+        COUNT(s.sale_id) AS oste,
+        SUM(s.total_price) AS kogumüük_num
+    FROM sales s
+    INNER JOIN customers c ON s.customer_id = c.customer_id
+    GROUP BY c.city
+),
+ranked_cities AS (
+    SELECT
+        CASE 
+            WHEN linn IN ('Tallinn', 'Tartu', 'Pärnu') THEN linn 
+            ELSE 'Muud piirkonnad' 
+        END AS grupeeritud_linn,
+        kliente,
+        oste,
+        kogumüük_num,
+        CASE 
+            WHEN linn IN ('Tallinn', 'Tartu', 'Pärnu') THEN 1 
+            ELSE 2 
+        END AS sorteerimise_järjekord
+    FROM city_summary
+)
+SELECT
+    grupeeritud_linn AS linn,
+    SUM(kliente) AS kliente,
+    SUM(oste) AS oste,
+    TO_CHAR(SUM(kogumüük_num), 'FM999 999 990.00') AS kogumüük
+FROM ranked_cities
+GROUP BY grupeeritud_linn, sorteerimise_järjekord
+ORDER BY sorteerimise_järjekord ASC, SUM(kogumüük_num) DESC;
