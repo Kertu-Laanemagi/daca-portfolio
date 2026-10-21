@@ -66,7 +66,7 @@ Leidsin kõigi 3 segmendi keskmise käibe. Lisaks leidsin, millistes linnades on
 
 **5. Iga linna kohta leitud 5 top klienti, kliendisegment ja kogukulu**
 
-Kasutasin `ROUND()`, `SUM()`, `GROUP BY`,`ORDER BY` `, `RANK` ja `CASE WHEN` päringuid, et leida esmalt kõikide klientide kogukulu ja linn, seejärel ägada need segmentideks ning leida igalinna kohta top 5 VIP klienti järjestatuna kogukulu järgi.  
+Kasutasin `ROUND()`, `SUM()`, `GROUP BY`,`ORDER BY`, `RANK` ja `CASE WHEN` päringuid, et leida esmalt kõikide klientide kogukulu ja linn, seejärel ägada need segmentideks ning leida igalinna kohta top 5 VIP klienti järjestatuna kogukulu järgi.  
 
 **Tulemus:** Iga linna kohta leitud VIP klientide järjestus, Piiratud tulemusi iga linna kohta 5ga. 
 
