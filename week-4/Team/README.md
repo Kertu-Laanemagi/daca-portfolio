@@ -79,7 +79,20 @@ Kasutasin `ROUND()`, `SUM()`, `GROUP BY`,`ORDER BY`, `RANK` ja `CASE WHEN` päri
 * Näidata investoritele selget kliendiredelit: kuidas tavakliendist saab 1000 € künnise ületamisel Aktiivne klient ja sealt edasi 5000 € künnisega VIP.  See tõestab toimivat klienditeekonda ja stabiilset rahakäibet. 
 
 
-| Näitaja | 2025 | 2026 |
-| --- | --- | --- |
-|Keskmine tellimusväärtus (AOV)| 289 € | 255 € |
-|Kliendi käibekonsentratsioon | 41% | 28% |
+| Näitaja | 2024 | 2025 | 2026 |
+| --- | --- | --- | ---|
+|Keskmine tellimusväärtus (AOV)| 286 € | 289 € | 255 € |
+|Kliendi käibekonsentratsioon | |41% | 28% |
+
+
+| aasta | keskmine_tellimuse_vaartus_aov | tellimuste_koguarv | kogukaive   |
+| ----- | ------------------------------ | ------------------ | ----------  |
+| 2024  | 286.23 €                       | 5137               | 1470 358.02 €|
+| 2025  | 289.39 €                       | 691                | 199 968.69 € |
+| 2026  | 255.77 €                       | 16                 | 4 092.37 €   |
+
+| aasta | top_10_protsendi_kaive | kaibe_kontsentratsioon_protsent |
+| ----- | ---------------------- | ------------------------------- |
+| 2024  | 664 191.05 €           | 45.17 €                          |
+| 2025  | 81 855.72 €            | 40.93 €                         |
+| 2026  | 1 166.88 €             | 28.51 €                          |
