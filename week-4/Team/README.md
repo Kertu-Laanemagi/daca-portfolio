@@ -82,7 +82,7 @@ Kasutasin `ROUND()`, `SUM()`, `GROUP BY`,`ORDER BY`, `RANK` ja `CASE WHEN` päri
 | Näitaja | 2024 | 2025 | 2026 |
 | --- | --- | --- | ---|
 |Keskmine tellimusväärtus (AOV)| 286 € | 289 € | 255 € |
-|Kliendi käibekonsentratsioon | |41% | 28% |
+|Kliendi käibekonsentratsioon | 45% |41% | 28% |
 
 
 | aasta | keskmine_tellimuse_vaartus_aov | tellimuste_koguarv | kogukaive   |
