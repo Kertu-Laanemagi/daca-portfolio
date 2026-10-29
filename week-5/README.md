@@ -17,8 +17,9 @@ Viienda nädala eesmärk oli kasutada eelnevate nädalate SQL päringuid ja koos
 | `products` | Tooted ja inventuur |
 | `turunduskanalid` | Turunduskanalite analüüsnädal 4 roll D |
 
-(Grupitöö esitluse fail)[https://docs.google.com/presentation/d/1bg1lFpKq04LwAn1vqwGZc_S45lVt2TCMeZ8oVTS-EaU/edit?slide=id.h713c66dd081386e0_0_1#slide=id.h713c66dd081386e0_0_1]
-(Grupitöö roll B)[Week-5/urbanstyle_week5_dashboard_GT_Kertu.pbix]
+- (Grupitöö esitluse fail)[https://docs.google.com/presentation/d/1bg1lFpKq04LwAn1vqwGZc_S45lVt2TCMeZ8oVTS-EaU/edit?slide=id.h713c66dd081386e0_0_1#slide=id.h713c66dd081386e0_0_1]
+
+- (Grupitöö roll B)[Week-5/urbanstyle_week5_dashboard_GT_Kertu.pbix]
 
 ### Kasutatud võtted
 
