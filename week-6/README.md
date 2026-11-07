@@ -22,3 +22,4 @@ Data: 3 aasta müügiandmed näitavad selget kasvu, alates 2025 aasta jaanuarist
 Action: Auditeerida, kas ettevõte on elujõuline ja müüa laovaru genereerimaks vaba rahavoogu, mida investeerida kui ettevõte jätkab tegevust. 
 
 AI kasutus: AI kasutasin nädalatöös leidmaks sobivaid visualiseerimisstiile ja aitamaks DAX koodide genereerimiseks.
+[grupitöö esitlus](https://docs.google.com/presentation/d/1PUgn8d0K3lLBJAOyjhV7pqao-_f7jHXARFT1brWRcvg/edit?slide=id.p#slide=id.p)
