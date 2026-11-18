@@ -20,6 +20,6 @@ Kasutatud on logger teeki logi loomiseks, smtplib saadab e-kirju , pathlib teeb 
 -  ETL pipeline retry konfiguratsioon - 3 korda proovimist.
 -  ETL pipeline järjendus: pipeline osade käivitus, logging, data extract, transform, visualise ja salvestus.
 -  Kokkuvõtte andmed
--  
+  
 AI kasutus: AI abim kasutasin pipeline koodi kirjutamisel ja täpse ülesehituse seletamisel.
 AI aitas paigutada pipeline elemendid loogilisse järjekorda, et iga protsess toimiks täpselt õigel ajal.
