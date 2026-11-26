@@ -35,12 +35,11 @@ põhjendustega.
 | Kertu | A/D - Värbamisjuht / Tiimijuht |
 
 ## Minu koostatud värbamisjuhendi osa
-
+[Roll A/D](https://github.com/Ivo-Murel/TOODE/blob/main/Week-9/individual/Kertu_Roll_A_D.md)
 
 ## Meeskonna ühine töö
 
-Meeskonna ühise värbamisjuhendi link lisatakse
-pärast grupitöö valmimist.
+[Meeskonna ühine töö](https://docs.google.com/document/d/1JXx-YHJBB_C_Z3lAYbGtd14lTn-8qxuh/edit)
 
 ## AI kasutamine
 
